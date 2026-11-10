@@ -2,79 +2,252 @@
 <!DOCTYPE html>
 <html lang="de">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Ali Zakaria | Engineering Portfolio</title>
-  <style>
-    body {
-      font-family: Arial, sans-serif;
-      background: #0f172a;
-      color: #f1f5f9;
-      margin: 0;
-      line-height: 1.6;
-    }
-    header {
-      text-align: center;
-      background: #1e293b;
-      padding: 55px 20px;
-    }
-    h1 { color: #38bdf8; }
-    main { max-width: 900px; margin: auto; padding: 25px; }
-    .card {
-      background: #1e293b;
-      border-radius: 12px;
-      padding: 22px;
-      margin: 18px 0;
-    }
-    a { color: #38bdf8; }
-  </style>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Ali Zakaria | Engineering Portfolio</title>
+
+<style>
+* { box-sizing: border-box; }
+
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  background: #0b1220;
+  color: #f1f5f9;
+  line-height: 1.6;
+}
+
+header {
+  padding: 65px 20px;
+  text-align: center;
+  background: linear-gradient(135deg, #172b4d, #0b1220);
+}
+
+h1 { color: #38bdf8; font-size: 42px; margin-bottom: 5px; }
+h2 { color: #38bdf8; }
+
+.subtitle { color: #cbd5e1; }
+
+main {
+  max-width: 1100px;
+  margin: auto;
+  padding: 35px 20px;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 20px;
+  margin-top: 30px;
+}
+
+.tile, .project {
+  background: #1e293b;
+  color: white;
+  padding: 28px;
+  border-radius: 14px;
+  border: 1px solid #334155;
+}
+
+.tile {
+  width: 100%;
+  text-align: left;
+  cursor: pointer;
+  font: inherit;
+  transition: 0.2s;
+}
+
+.tile:hover {
+  background: #263b59;
+  border-color: #38bdf8;
+  transform: translateY(-4px);
+}
+
+.tile h3 { color: #38bdf8; }
+.tile p { color: #cbd5e1; }
+
+.project {
+  margin: 20px 0;
+}
+
+.project h3 { margin-top: 0; }
+
+.status { color: #fbbf24; }
+
+button.back {
+  background: #0284c7;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  padding: 12px 20px;
+  cursor: pointer;
+  font-size: 15px;
+}
+
+button.back:hover { background: #0369a1; }
+
+.page { display: none; }
+.page.active { display: block; }
+
+a { color: #7dd3fc; }
+
+footer {
+  text-align: center;
+  color: #94a3b8;
+  padding: 35px;
+  border-top: 1px solid #334155;
+}
+
+@media(max-width: 600px) {
+  h1 { font-size: 32px; }
+  header { padding: 40px 15px; }
+}
+</style>
 </head>
+
 <body>
-  <header>
-    <h1>Ali Zakaria</h1>
-    <h2>Mechatronik & Robotik</h2>
-    <p>Engineering Portfolio | Hannover, Deutschland</p>
-  </header>
 
-  <main>
-    <h2>Über mich</h2>
+<header>
+  <h1>Ali Zakaria</h1>
+  <h3>Mechatronik & Robotik</h3>
+  <p class="subtitle">
+    Engineering Portfolio | Hannover, Deutschland
+  </p>
+</header>
+
+<main>
+
+<!-- HOMEPAGE -->
+<section id="home" class="page active">
+  <h2>Über mich</h2>
+  <p>
+    Masterstudent der Mechatronik und Robotik
+    an der Leibniz Universität Hannover.
+    Schwerpunktinteressen: Automatisierungstechnik,
+    Robotik und Softwareentwicklung.
+  </p>
+
+  <h2>Projektbereiche</h2>
+  <p>Wählen Sie einen Bereich, um die Projekte anzusehen.</p>
+
+  <div class="grid">
+
+    <button class="tile" onclick="showPage('automation')">
+      <h3>⚙ Automatisierungstechnik</h3>
+      <p>TIA Portal, SPS, HMI, MSR, PID</p>
+      <p>Projekte ansehen →</p>
+    </button>
+
+    <button class="tile" onclick="showPage('matlab')">
+      <h3>📊 MATLAB & Simulink</h3>
+      <p>Simulation, Regelungstechnik, Kinematik</p>
+      <p>Projekte ansehen →</p>
+    </button>
+
+    <button class="tile" onclick="showPage('robotik')">
+      <h3>🤖 Robotik</h3>
+      <p>ROS 2, Gazebo, Navigation, Sensorik</p>
+      <p>Projekte ansehen →</p>
+    </button>
+
+    <button class="tile" onclick="showPage('software')">
+      <h3>💻 Softwareentwicklung</h3>
+      <p>Python, C++, Linux, Git</p>
+      <p>Projekte ansehen →</p>
+    </button>
+
+  </div>
+</section>
+
+<!-- AUTOMATISIERUNG -->
+<section id="automation" class="page">
+  <button class="back" onclick="showPage('home')">
+    ← Zurück zur Startseite
+  </button>
+
+  <h2>Automatisierungstechnik</h2>
+  <p>Projekte aus SPS, HMI und industrieller Automatisierung.</p>
+
+  <div class="project">
+    <h3>Projekt 01 – Conveyor Automation</h3>
+    <p><strong>Software:</strong> TIA Portal V21</p>
     <p>
-      Masterstudent im Bereich Mechatronik und Robotik
-      an der Leibniz Universität Hannover.
-      Meine Interessen liegen in der Automatisierungstechnik,
-      SPS-Programmierung und Robotik.
+      SPS-Steuerung einer Förderanlage mit zwei Motoren,
+      Sensoren, Zeitgliedern, Zählern und HMI.
     </p>
+    <p class="status">Status: In Entwicklung</p>
+    <p>Projektdokumentation und Dateien folgen.</p>
+  </div>
+</section>
 
-    <h2>Technische Kenntnisse</h2>
-    <p>TIA Portal | SPS | Python | MATLAB | ROS 2</p>
+<!-- MATLAB -->
+<section id="matlab" class="page">
+  <button class="back" onclick="showPage('home')">
+    ← Zurück zur Startseite
+  </button>
 
-    <h2>Meine Projekte</h2>
+  <h2>MATLAB & Simulink</h2>
+  <p>
+    Numerische Berechnungen, Simulation,
+    Regelungstechnik und Robotik-Anwendungen.
+  </p>
 
-    <div class="card">
-      <h3>1. Conveyor Automation – TIA Portal</h3>
-      <p>SPS-Steuerung mit Motoren, Sensoren,
-      Timern, Zählern und HMI.</p>
-      <p>Status: In Entwicklung</p>
-    </div>
+  <div class="project">
+    <h3>Projekte folgen</h3>
+    <p>Hier werden MATLAB- und Simulink-Projekte veröffentlicht.</p>
+  </div>
+</section>
 
-    <div class="card">
-      <h3>2. Mobile Robot – ROS 2 & Gazebo</h3>
-      <p>Modellierung und Simulation eines mobilen Roboters.</p>
-      <p>Status: In Entwicklung</p>
-    </div>
+<!-- ROBOTIK -->
+<section id="robotik" class="page">
+  <button class="back" onclick="showPage('home')">
+    ← Zurück zur Startseite
+  </button>
 
-    <div class="card">
-      <h3>3. Robot Kinematics – MATLAB</h3>
-      <p>Rotationsmatrizen und kinematische Berechnungen.</p>
-      <p>Status: In Entwicklung</p>
-    </div>
+  <h2>Robotik</h2>
+  <p>ROS 2, Gazebo, Robotermodellierung und Simulation.</p>
 
-    <h2>Kontakt</h2>
-    <p>
-      <a href="https://github.com/246885-ali">
-        Mein GitHub-Profil
-      </a>
-    </p>
-  </main>
+  <div class="project">
+    <h3>Projekte folgen</h3>
+    <p>Hier werden Robotik-Projekte veröffentlicht.</p>
+  </div>
+</section>
+
+<!-- SOFTWARE -->
+<section id="software" class="page">
+  <button class="back" onclick="showPage('home')">
+    ← Zurück zur Startseite
+  </button>
+
+  <h2>Softwareentwicklung</h2>
+  <p>Programmierung mit Python und C++.</p>
+
+  <div class="project">
+    <h3>Projekte folgen</h3>
+    <p>Hier werden Softwareprojekte veröffentlicht.</p>
+  </div>
+</section>
+
+</main>
+
+<footer>
+  <p>Ali Zakaria | Engineering Portfolio</p>
+  <a href="https://github.com/246885-ali"
+     target="_blank" rel="noopener noreferrer">
+    GitHub-Profil
+  </a>
+</footer>
+
+<script>
+function showPage(pageId) {
+  document.querySelectorAll('.page').forEach(function(page) {
+    page.classList.remove('active');
+  });
+
+  document.getElementById(pageId).classList.add('active');
+  window.scrollTo(0, 0);
+}
+</script>
+
 </body>
 </html>
