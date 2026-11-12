@@ -198,3 +198,46 @@ footer, .site-footer {
     grid-template-columns: 1fr;
   }
 }
+
+/* Conveyor Automation - Image Gallery */
+
+#bilder .grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 24px;
+}
+
+#bilder .card {
+  min-width: 0;
+  overflow: hidden;
+}
+
+#bilder .card a {
+  display: block;
+}
+
+#bilder .card img {
+  display: block;
+  width: 100%;
+  max-width: 100%;
+  height: 280px;
+  object-fit: contain;
+  border-radius: 10px;
+  background: #0b1220;
+}
+
+#bilder .card p {
+  overflow-wrap: break-word;
+}
+
+@media (max-width: 700px) {
+  #bilder .grid {
+    grid-template-columns: 1fr;
+  }
+
+  #bilder .card img {
+    height: auto;
+    max-height: 350px;
+  }
+}
+
