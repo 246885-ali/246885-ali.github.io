@@ -1,0 +1,203 @@
+
+<!DOCTYPE html>
+<html lang="de">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport"
+        content="width=device-width, initial-scale=1">
+
+  <title>Robot Coordinate Transformations | Ali Zakaria</title>
+
+  <link rel="stylesheet"
+        href="../../assets/css/style.css">
+</head>
+
+<body>
+
+<header class="site-header">
+  <h1>Robot Coordinate Transformations</h1>
+
+  <p class="subtitle">
+    Rotationsmatrizen | Koordinatensysteme |
+    Homogene Transformationen
+  </p>
+
+  <p>MATLAB | Ali Zakaria</p>
+</header>
+
+<nav class="site-nav">
+  <a href="../../index.html">Startseite</a>
+  <a href="../index.html">MATLAB & Simulink</a>
+  <a href="#beschreibung">Beschreibung</a>
+  <a href="#mathematik">Mathematik</a>
+  <a href="#visualisierung">3D-Visualisierung</a>
+  <a href="#dateien">Projektdateien</a>
+</nav>
+
+<main class="container">
+
+  <section id="beschreibung">
+
+    <h2>1. Projektbeschreibung</h2>
+
+    <p>
+      In diesem Projekt werden Positionen
+      und Orientierungen von Koordinatensystemen
+      mit MATLAB berechnet und visualisiert.
+    </p>
+
+    <p>
+      Ziel ist die Bestimmung der relativen
+      Position und Orientierung eines Objekts B
+      gegenüber dem Endeffektor E.
+    </p>
+
+    <h2>2. Projektziele</h2>
+
+    <div class="project">
+      <ul>
+        <li>Berechnung von Rotationsmatrizen</li>
+        <li>Transformation von Koordinatensystemen</li>
+        <li>Berechnung homogener Transformationen</li>
+        <li>Überprüfung der Rotationseigenschaften</li>
+        <li>3D-Visualisierung mit MATLAB</li>
+      </ul>
+    </div>
+
+  </section>
+
+  <section id="mathematik">
+
+    <h2>3. Mathematische Grundlagen</h2>
+
+    <div class="project">
+
+      <h3>Rotationsmatrix</h3>
+
+      <p>
+        Die relative Rotation zwischen den
+        Koordinatensystemen E und B ergibt sich aus:
+      </p>
+
+      <p><strong>R_E_B = R_0_E' * R_0_B</strong></p>
+
+      <h3>Translationsvektor</h3>
+
+      <p>
+        Die Position des Objekts B,
+        ausgedrückt im Koordinatensystem E:
+      </p>
+
+      <p>
+        <strong>
+          t_E_B = R_0_E' * (p_0_B - p_0_E)
+        </strong>
+      </p>
+
+      <h3>Homogene Transformation</h3>
+
+      <p>
+        Rotation und Translation werden in
+        einer 4x4-Matrix zusammengefasst.
+      </p>
+
+      <pre style="overflow-x:auto;">T_E_B = [R_E_B, t_E_B;
+         0, 0, 0, 1];</pre>
+
+    </div>
+
+  </section>
+
+  <section id="validierung">
+
+    <h2>4. Mathematische Validierung</h2>
+
+    <div class="project">
+
+      <p>
+        Die berechnete Rotationsmatrix
+        wird anhand der folgenden
+        mathematischen Eigenschaften geprüft:
+      </p>
+
+      <pre style="overflow-x:auto;">R_E_B.' * R_E_B = I
+
+det(R_E_B) = 1</pre>
+
+      <p>
+        Die Ergebnisse werden numerisch
+        mit MATLAB überprüft.
+      </p>
+
+    </div>
+
+  </section>
+
+  <section id="visualisierung">
+
+    <h2>5. 3D-Visualisierung</h2>
+
+    <div class="project">
+
+      <h3>Koordinatensysteme CS0, E und B</h3>
+
+      <p>
+        Darstellung der Positionen und
+        Orientierungen der drei
+        Koordinatensysteme im 3D-Raum.
+      </p>
+
+      <p>
+        Die X-, Y- und Z-Achsen werden
+        farblich dargestellt.
+      </p>
+
+      <p class="status">
+        MATLAB-Abbildung wird ergänzt.
+      </p>
+
+    </div>
+
+  </section>
+
+  <section id="dateien">
+
+    <h2>6. Projektdateien</h2>
+
+    <div class="project">
+
+      <h3>MATLAB Source Code</h3>
+
+      <p>
+        Das MATLAB-Skript enthält die
+        Berechnungen, die Validierung
+        und die 3D-Visualisierung.
+      </p>
+
+      <p class="status">
+        MATLAB-Dateien werden ergänzt.
+      </p>
+
+    </div>
+
+  </section>
+
+  <section>
+
+    <h2>Weitere MATLAB-Projekte</h2>
+
+    <a href="../index.html" class="btn">
+      Zurück zu MATLAB & Simulink
+    </a>
+
+  </section>
+
+</main>
+
+<footer class="site-footer">
+  <p>© Ali Zakaria | Engineering Portfolio</p>
+</footer>
+
+</body>
+</html>
